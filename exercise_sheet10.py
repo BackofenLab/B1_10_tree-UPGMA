@@ -43,6 +43,30 @@ def exercise_1d():
 
 def exercise_1e():
     """
+    Fill in the following distance matrix. (both, upper and lower triangle)
+    """
+    #    {a,b}, {c,d}, e
+    matrix = [
+            [0,    0,  0],  # {a,b}
+            [0,    0,  0],  # {c,d}
+            [0,    0,  0],  # e
+    ]
+    return matrix
+
+
+def exercise_1f():
+    """
+    What does the part of the tree look like in newick format after selecting
+    and joining your answer from e)
+    """
+    one = "((c : 3, d : 3) : 3.5, e : 3.5)"
+    two = "((c : 3, d : 3) : 0.5, e : 3.5)"
+    three = "((a : 1.5, b : 1.5) : 2.75, e : 4.25)"
+    return None
+
+
+def exercise_1g():
+    """
     Given the initial distance matrix and the WPGMA function, which tree
     representation is correct?
     """

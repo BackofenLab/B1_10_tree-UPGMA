@@ -90,7 +90,7 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
 - [ ] {c,d} and e
 - [ ] e and a
 
-**e)** Fill in the upper triangle of the following distance matrix.
+**e)** Fill in the following distance matrix (both, upper and lower triangle).
 
 <details>
   <summary>Hint: (Click to open)</summary>
