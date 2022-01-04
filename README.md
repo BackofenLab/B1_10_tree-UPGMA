@@ -10,6 +10,27 @@ Course ILIAS: [web page link](https://ilias.uni-freiburg.de/ilias.php?ref_id=233
 ##### Exercise sheet 10: UPGMA
 ---
 
+The following introduction is mainly taken from en.wikipedia.org.
+A phylogenetic tree or evolutionary tree is a branching diagram or ”tree” showing the inferred
+evolutionary relationships among various biological species or other entities based upon similarities
+and differences in their physical and/or genetic characteristics. The taxa joined together in the tree
+are implied to have descended from a common ancestor. In a rooted phylogenetic tree, each node
+with descendants represents the inferred most recent common ancestor of the descendants, and the
+edge lengths in some trees may be interpreted as time estimates. Each node is called a taxonomic
+unit. Internal nodes are generally called hypothetical taxonomic units (HTUs) as they cannot be
+directly observed.
+
+**UPGMA** (Unweighted Pair Group Method with Arithmetic Mean) is a simple agglomerative or
+hierarchical clustering method used in bioinformatics for the creation of phylogenetic trees. UP-
+GMA assumes a constant rate of evolution (molecular clock hypothesis), and is not a well-regarded
+method for inferring phylogenetic trees unless this assumption has been tested and justified for the
+data set being used.
+
+Distances for a merged cluster e, where e = c ∪ d:
+
+<img src="./figures/upgma.svg" alt="WPGMA and UPGMA" width="50%"/>
+
+
 ### _Exercise 1 -  UPGMA and WPGMA
 
 Calculate the according evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.
