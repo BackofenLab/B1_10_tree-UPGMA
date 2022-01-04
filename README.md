@@ -21,8 +21,8 @@ unit. Internal nodes are generally called hypothetical taxonomic units (HTUs) as
 directly observed.
 
 **UPGMA** (Unweighted Pair Group Method with Arithmetic Mean) is a simple agglomerative or
-hierarchical clustering method used in bioinformatics for the creation of phylogenetic trees. UP-
-GMA assumes a constant rate of evolution (molecular clock hypothesis), and is not a well-regarded
+hierarchical clustering method used in bioinformatics for the creation of phylogenetic trees. UPGMA
+assumes a constant rate of evolution (molecular clock hypothesis), and is not a well-regarded
 method for inferring phylogenetic trees unless this assumption has been tested and justified for the
 data set being used.
 
