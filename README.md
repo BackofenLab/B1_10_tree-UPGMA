@@ -33,7 +33,7 @@ Distances for a merged cluster e, where e = c ∪ d:
 </p>
 
 
-### _Exercise 1 -  UPGMA and WPGMA
+### _Exercise 1 - WPGMA_
 
 Calculate the according evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.
 
@@ -97,3 +97,13 @@ Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.p
 - [ ] ((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);
 - [ ] ((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);
 - [ ] (((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);
+
+### _Exercise 2 - UPGMA_
+
+**a)** Imagine using  UPGMA instead of WPGMA for construction of a tree. Which of the following 
+statements is True?
+
+
+- [ ] There will only be a difference in edge lengths. Overall topology will stay the same.
+- [ ] The tree in **_Exercise 1_** will not change
+- [ ] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same. 
