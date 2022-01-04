@@ -90,7 +90,29 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
 - [ ] {c,d} and e
 - [ ] e and a
 
-**e)** Following the approach from the previous exercises, which of the following 
+**e)** Fill in the upper triangle of the following distance matrix.
+
+<details>
+  <summary>Hint: (Click to open)</summary>
+  If you did not end up with  these clusters after a-d, your current solution is wrong
+</details>
+
+| D<sub>ij</sub>| {a,b}  | {c,d}| e    | 
+|---------------|--------|------|------|
+| **{a,b}**     |  0     |      |      |
+| **{c,d}**     |        |  0   |      |
+| **e**         |        |      |  0   |
+
+**f)** What does the part of the tree look like in newick format after selecting and joining
+your answer from **e)**
+
+- [ ] ((c : 3, d : 3) : 3.5, e : 3.5)
+- [ ] ((c : 3, d : 3) : 0.5, e : 3.5)
+- [ ] ((a : 1.5, b : 1.5) : 2.75, e : 4.25)
+
+
+
+**g)** Following the approach from the previous exercises, which of the following 
 representations of the tree is correct? (Trees are given in [Newick format](https://en.wikipedia.org/wiki/Newick_format))
 Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.php?action=newick&project=trex)
 
@@ -107,3 +129,4 @@ statements is True?
 - [ ] There will only be a difference in edge lengths. Overall topology will stay the same.
 - [ ] The tree in **_Exercise 1_** will not change
 - [ ] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same. 
+- [ ] UPGMA can end up with wrong topologies when using non-ultrametric distances.  
