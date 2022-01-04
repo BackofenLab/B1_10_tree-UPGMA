@@ -74,3 +74,26 @@ def exercise_1g():
     two = "((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);"
     three = "(((c : 3, d : 3) : 3.5, e : 3.5): 4, (a : 1.5, b : 1.5) : 2);"
     return None
+
+
+def exercise_2a():
+    """
+    Imagine using  UPGMA instead of WPGMA for construction of a tree.
+    Which of the following statements is True?
+    """
+    # There will only be a difference in edge lengths. Overall topology will
+    # stay the same.
+    one = None
+
+    # The tree in Exercise 1 will not change
+    two = None
+
+    # UPGMA is equal to WPGMA if the number of leaves in the two clusters
+    # (|c| and |d|) is the same.
+    three = None
+
+    # UPGMA can end up with wrong topologies when using non-ultrametric
+    # distances.
+    four = None
+
+    return one, two, three, four
