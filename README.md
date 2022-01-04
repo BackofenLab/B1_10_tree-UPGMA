@@ -11,6 +11,7 @@ Course ILIAS: [web page link](https://ilias.uni-freiburg.de/ilias.php?ref_id=233
 ---
 
 The following introduction is mainly taken from en.wikipedia.org.
+
 A phylogenetic tree or evolutionary tree is a branching diagram or ”tree” showing the inferred
 evolutionary relationships among various biological species or other entities based upon similarities
 and differences in their physical and/or genetic characteristics. The taxa joined together in the tree
