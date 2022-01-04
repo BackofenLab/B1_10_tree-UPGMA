@@ -40,6 +40,7 @@ def exercise_1d():
     four = "e and a"
     return None
 
+
 def exercise_1e():
     """
     Given the initial distance matrix and the WPGMA function, which tree
