@@ -28,7 +28,9 @@ data set being used.
 
 Distances for a merged cluster e, where e = c ∪ d:
 
+<p align="center">
 <img src="./figures/upgma.svg" alt="WPGMA and UPGMA" width="50%"/>
+</p>
 
 
 ### _Exercise 1 -  UPGMA and WPGMA
