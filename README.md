@@ -10,7 +10,7 @@ Course ILIAS: [web page link](https://ilias.uni-freiburg.de/ilias.php?ref_id=233
 ##### Exercise sheet 10: UPGMA
 ---
 
-The following introduction is mainly taken from en.wikipedia.org.
+The following introduction is mainly taken from *en.wikipedia.org*.
 
 A phylogenetic tree or evolutionary tree is a branching diagram or ”tree” showing the inferred
 evolutionary relationships among various biological species or other entities based upon similarities
@@ -59,25 +59,25 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
 
 **1.**
 
-| D<sub>ij</sub>| {a,b}  | c    | d    | e   | 
+| D<sub>ij</sub>| {a,b}  | c    | d    | e   |
 |---------------|--------|------|------|-----|
 | **{a,b}**     |  0     | 12.5 | 12.5 | 9.5 |
 | **c**         |        |  0   | 13   | 7   |
 | **d**         |        |      |  0   |  7  |
 | **e**         |        |      |      |  0  |
 
-**2.** 
+**2.**
 
-| D<sub>ij</sub>| {a,b}  | c    | d    | e   | 
+| D<sub>ij</sub>| {a,b}  | c    | d    | e   |
 |---------------|--------|------|------|-----|
 | **{a,b}**     |  0     | 10.5 | 10.5 | 9.5 |
 | **c**         |        |  0   | 13   | 7   |
 | **d**         |        |      |  0   |  7  |
 | **e**         |        |      |      |  0  |
 
-**3.** 
+**3.**
 
-| D<sub>ij</sub>| {c,d}  | a    | b    | e   | 
+| D<sub>ij</sub>| {c,d}  | a    | b    | e   |
 |---------------|--------|------|------|-----|
 | **{c,d}**     |  0     |  12  | 13   |  7  |
 | **a**         |        |  0   | 13   |  7  |
@@ -98,7 +98,7 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
   If you did not end up with  these clusters after a-d, your current solution is wrong
 </details>
 
-| D<sub>ij</sub>| {a,b}  | {c,d}| e    | 
+| D<sub>ij</sub>| {a,b}  | {c,d}| e    |
 |---------------|--------|------|------|
 | **{a,b}**     |  0     |      |      |
 | **{c,d}**     |        |  0   |      |
@@ -113,7 +113,7 @@ your answer from **e)**
 
 
 
-**g)** Following the approach from the previous exercises, which of the following 
+**g)** Following the approach from the previous exercises, which of the following
 representations of the tree is correct? (Trees are given in [Newick format](https://en.wikipedia.org/wiki/Newick_format))
 Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.php?action=newick&project=trex)
 
@@ -123,11 +123,53 @@ Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.p
 
 ### _Exercise 2 - UPGMA_
 
-**a)** Imagine using  UPGMA instead of WPGMA for construction of a tree. Which of the following 
+**a)** Imagine using  UPGMA instead of WPGMA for construction of a tree. Which of the following
 statements is True?
 
 
 - [ ] There will only be a difference in edge lengths. Overall topology will stay the same.
 - [ ] The tree in **_Exercise 1_** will not change
-- [ ] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same. 
-- [ ] UPGMA can end up with wrong topologies when using non-ultrametric distances.  
+- [ ] UPGMA is equal to WPGMA if the number of leaves in the two clusters (|c| and |d|) is the same.
+- [ ] UPGMA can end up with wrong topologies when using non-ultrametric distances.
+
+### _Exercise 3 - Ultrametric_
+
+Which of the following distance matrices are ultrametric ?
+
+**a)**
+| D<sub>ij</sub>| a  | b  | c  | d  | e  |
+|---------------|----|----|----|----|----|
+| **a**         |  0 |  3 | 12 | 12 |  9 |
+| **b**         |    |  0 | 13 | 13 | 10 |
+| **c**         |    |    |  0 |  6 |  7 |
+| **d**         |    |    |    |  0 |  7 |
+| **e**         |    |    |    |    |  0 |
+
+**b)**
+| D<sub>ij</sub>| a  | b  | c  | d  | e  |
+|---------------|----|----|----|----|----|
+| **a**         |  0 |  2 |  4 |  6 |  8 |
+| **b**         |    |  0 |  4 |  6 |  8 |
+| **c**         |    |    |  0 |  6 |  8 |
+| **d**         |    |    |    |  0 |  8 |
+| **e**         |    |    |    |    |  0 |
+
+**c)**
+| D<sub>ij</sub>| a  | b  | c  | d  | e  |
+|---------------|----|----|----|----|----|
+| **a**         |  0 | 10 | 17 | 16 | 16 |
+| **b**         |    |  0 | 15 | 14 | 14 |
+| **c**         |    |    |  0 |  9 | 15 |
+| **d**         |    |    |    |  0 | 14 |
+| **e**         |    |    |    |    |  0 |
+
+**d)**
+| D<sub>ij</sub>| a  | b  | c  | d  | e  |
+|---------------|----|----|----|----|----|
+| **a**         |  0 |  2 |  2 |  2 |  2 |
+| **b**         |    |  0 |  4 |  4 |  4 |
+| **c**         |    |    |  0 |  6 |  6 |
+| **d**         |    |    |    |  0 |  8 |
+| **e**         |    |    |    |    |  0 |
+
+### _Exercise 4 - Programming assignment_

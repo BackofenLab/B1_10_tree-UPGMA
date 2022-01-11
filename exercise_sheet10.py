@@ -97,3 +97,41 @@ def exercise_2a():
     four = None
 
     return one, two, three, four
+
+def exercise_3a():
+    """
+    Which of the following distance matrices are ultrametric?
+
+    If a matrix is ultrametric label it as True, otherwise use False.
+    """
+
+
+    #a | 0 | 3 | 12 | 12 |  9 |
+    #b |   | 0 | 13 | 13 | 10 |
+    #c |   |   |  0 |  6 |  7 |
+    #d |   |   |    |  0 |  7 |
+    #e |   |   |    |    |  0 |
+    a = None
+
+    #a | 0 | 2 | 4 | 6 | 8 |
+    #b |   | 0 | 4 | 6 | 8 |
+    #c |   |   | 0 | 6 | 8 |
+    #d |   |   |   | 0 | 8 |
+    #e |   |   |   |   | 0 |
+    b = None
+
+    #a | 0 | 10 | 17 | 16 | 16 |
+    #b |   |  0 | 15 | 14 | 14 |
+    #c |   |    |  0 |  9 | 15 |
+    #d |   |    |    |  0 | 14 |
+    #e |   |    |    |    |  0 |
+    c = None
+
+    #a | 0 | 2 | 2 | 2 | 2 |
+    #b |   | 0 | 4 | 4 | 4 |
+    #c |   |   | 0 | 6 | 6 |
+    #d |   |   |   | 0 | 8 |
+    #e |   |   |   |   | 0 |
+    d = None
+
+    return a, b, c, d

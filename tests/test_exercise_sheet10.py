@@ -29,9 +29,9 @@ def test_exercise_1d():
 def test_exercise_1e():
     answer = exercise_1e()
     matrix = [
-        [0, 12.5, 9],  # {a,b}
+        [   0, 12.5, 9],  # {a,b}
         [12.5,    0, 7],  # {c,d}
-        [9,  7, 0],  # e
+        [   9,    7, 0],  # e
     ]
     assert answer == matrix
 
@@ -54,3 +54,10 @@ def test_exercise_2a():
     assert two is False
     assert three is True
     assert four is True
+
+def test_exercise_3a():
+    a, b, c, d = exercise_3a()
+    assert a is False
+    assert b is True
+    assert c is False
+    assert d is False
