@@ -50,9 +50,6 @@ class Node:
             return False
         return self.node_name == other.node_name
 
-    def get_nodes(self):
-        return [self.node_name]
-
     def compute_distance(self, other):
         if isinstance(other, Node):
             return self.distances[self.index][other.index]
@@ -195,6 +192,7 @@ def build_the_tree_correct(list_names, distance_info):
     while len(list_elements) > 1:
         list_elements = merge_best_pair_correct(list_elements)
     return list_elements[0]
+
 
 def main():
     matrix_dist = [[0, 3, 12, 12, 9], [3, 0, 13, 13, 10], [12, 13, 0, 6, 7], [12, 13, 6, 0, 7], [9, 10, 7, 7, 0]]
