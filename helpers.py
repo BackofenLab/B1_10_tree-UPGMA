@@ -1,3 +1,6 @@
+from math import inf
+
+
 def compute_distance(obj1, obj2):
     if isinstance(obj1, Node) and isinstance(obj2, Node):
         return obj1.distances[obj1.index][obj2.index]
@@ -42,6 +45,11 @@ class Node:
     def __str__(self):
         return self.__repr__()
 
+    def __eq__(self, other):
+        if not isinstance(other, Node):
+            return False
+        return self.node_name == other.node_name
+
     def get_nodes(self):
         return [self.node_name]
 
@@ -65,10 +73,33 @@ class Node:
 
 class Tree:
     def __init__(self, left_branch, left_branch_distance, right_branch, right_branch_distance, distance_info):
-        self.left_branch = left_branch
-        self.left_branch_distance = left_branch_distance
-        self.right_branch = right_branch
-        self.right_branch_distance = right_branch_distance
+        if isinstance(left_branch, Node) and isinstance(right_branch, Node):
+            self.left_branch_distance = left_branch_distance
+            self.right_branch_distance = right_branch_distance
+            self.left_branch = left_branch
+            self.right_branch = right_branch
+
+        elif isinstance(left_branch, Node) and isinstance(right_branch, Tree):
+            self.left_branch_distance = right_branch_distance
+            self.right_branch_distance = left_branch_distance
+            self.left_branch = right_branch
+            self.right_branch = left_branch
+
+        elif isinstance(left_branch, Tree) and isinstance(right_branch, Node):
+            self.left_branch_distance = left_branch_distance
+            self.right_branch_distance = right_branch_distance
+            self.left_branch = left_branch
+            self.right_branch = right_branch
+
+        else:
+            (left_branch, left_branch_distance), (right_branch, right_branch_distance) = \
+                sorted([(left_branch, left_branch_distance), (right_branch, right_branch_distance)],
+                       key=lambda x: x[1], reverse=True)
+            self.left_branch_distance = left_branch_distance
+            self.right_branch_distance = right_branch_distance
+            self.left_branch = left_branch
+            self.right_branch = right_branch
+
         self.distance_info = distance_info
         self.size = left_branch.size + right_branch.size
         self.weight_type = distance_info[2]
@@ -106,6 +137,13 @@ class Tree:
                 other_distance = half_distance - other.depth
                 return Tree(self, self_distance, other, other_distance, self.distance_info)
 
+    def __eq__(self, other):
+        if not isinstance(other, Tree):
+            return False
+        return all([self.left_branch == other.left_branch,
+                    self.right_branch == other.right_branch,
+                    self.left_branch_distance == other.left_branch_distance,
+                    self.right_branch_distance == other.right_branch_distance])
 
     @property
     def depth(self):
@@ -138,6 +176,26 @@ class Tree:
                 return total_distance
 
 
+def convert_to_nodes_correct(list_names, distance_info):
+    return [Node(x, distance_info) for x in list_names]
+
+
+def merge_best_pair_correct(list_elements):
+    list_distances = [compute_distance(x, y) if x != y else inf for x in list_elements for y in list_elements]
+    min_nonzero = min(list_distances)
+    index_min = list_distances.index(min_nonzero)
+    row = index_min % len(list_elements)
+    column = int(index_min // len(list_elements))
+    merged = list_elements[column] + list_elements[row]
+    return [merged] + [elem for index, elem in enumerate(list_elements) if index not in [row, column]]
+
+
+def build_the_tree_correct(list_names, distance_info):
+    list_elements = convert_to_nodes_correct(list_names, distance_info)
+    while len(list_elements) > 1:
+        list_elements = merge_best_pair_correct(list_elements)
+    return list_elements[0]
+
 def main():
     matrix_dist = [[0, 3, 12, 12, 9], [3, 0, 13, 13, 10], [12, 13, 0, 6, 7], [12, 13, 6, 0, 7], [9, 10, 7, 7, 0]]
     nodes = ["a", "b", "c", "d", "e"]
@@ -161,6 +219,10 @@ def main():
     print(third_tree)
     print(third_tree_alternative)
     print(last_tree)
+
+    print(convert_to_nodes_correct(["a", "b", "c", "d", "e"], distance_info))
+    print(merge_best_pair_correct(convert_to_nodes_correct(["a", "b", "c", "d", "e"], distance_info)))
+    print(build_the_tree_correct(["a", "b", "c", "d", "e"], distance_info))
 
 
 if __name__ == "__main__":
