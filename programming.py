@@ -13,9 +13,10 @@ def compute_distance(obj1, obj2):
         return total_distance
     if isinstance(obj1, Tree) and isinstance(obj2, Tree):
         left_distance = obj1.compute_distance(obj2.left_branch)
-        right_distance = obj1.right_branch.compute_distance(obj2.right_branch)
+        right_distance = obj1.compute_distance(obj2.right_branch)
         total_distance = (left_distance + right_distance) / 2
         return total_distance
+
 
 class Node:
     def __init__(self, node_name, distance_info):
@@ -25,11 +26,18 @@ class Node:
         self.names = distance_info[1]
         self.index = self.names.index(node_name)
 
+    def __repr__(self):
+        return self.node_name
+
+    def __str__(self):
+        return self.__repr__()
+
     def get_nodes(self):
         return [self.node_name]
 
     def compute_distance(self, other):
         if isinstance(other, Node):
+            print(self, other, self.distances[self.index][other.index])
             return self.distances[self.index][other.index]
         elif isinstance(other, Tree):
             return other.compute_distance(self)
@@ -54,15 +62,37 @@ class Tree:
         self.right_branch_distance = right_branch_distance
         self.distance_info = distance_info
 
+    def __repr__(self):
+        return f"({self.left_branch}: {self.left_branch_distance}, {self.right_branch}: {self.right_branch_distance})"
+
+    def __str__(self):
+        return self.__repr__()
+
     def __add__(self, other):
         if not isinstance(other, Tree):
             if not isinstance(other, Node):
                 raise TypeError("Only supported between trees and nodes")
 
-        if isinstance(other, Node)
+        if isinstance(other, Node):
+            distance = self.compute_distance(other)
+            half_distance = distance/2
+            self_distance = half_distance - self.depth
+            return Tree(self, self_distance, other, half_distance, self.distance_info)
 
-    def __repr__(self):
-        pass
+        if isinstance(other, Tree):
+            distance = self.compute_distance(other)
+            half_distance = distance/2
+            self_distance = half_distance - self.depth
+            other_distance = half_distance - other.depth
+            return Tree(self, self_distance, other, other_distance, self.distance_info)
+
+
+    @property
+    def depth(self):
+        if isinstance(self.left_branch, Node):
+            return self.left_branch_distance
+        else:
+            return self.left_branch_distance + self.left_branch.depth
 
     def compute_distance(self, other):
         if not isinstance(other, Tree):
@@ -77,18 +107,37 @@ class Tree:
 
         if isinstance(other, Tree):
             left_distance = self.compute_distance(other.left_branch)
-            right_distance = self.right_branch.compute_distance(other.right_branch)
+            right_distance = self.compute_distance(other.right_branch)
             total_distance = (left_distance + right_distance) / 2
             return total_distance
 
 
-
-
-
-
 def main():
-    matrix_dist = [[0, 3, 12, 12, 10], [3, 0, 13, 13, 10], [12, 3, 0, 6, 7], [12, 13, 6, 0, 7], [9, 10, 7, 7, 0]]
+    matrix_dist = [[0, 3, 12, 12, 9], [3, 0, 13, 13, 10], [12, 13, 0, 6, 7], [12, 13, 6, 0, 7], [9, 10, 7, 7, 0]]
     nodes = ["a", "b", "c", "d", "e"]
-    distance_info = matrix_dist, nodes
+    weight = "wpgma"
+    distance_info = matrix_dist, nodes, weight
+
+    a_node = Node("a", distance_info)
+    b_node = Node("b", distance_info)
+
+    c_node = Node("c", distance_info)
+    d_node = Node("d", distance_info)
+    e_node = Node("e", distance_info)
+
+    first_tree = a_node + b_node
+    second_tree = c_node + d_node
+    third_tree = second_tree + e_node
+    third_tree_alternative = e_node + second_tree
+    last_tree = first_tree + third_tree
+    print(first_tree)
+    print(second_tree)
+    print(third_tree)
+    print(third_tree_alternative)
+    print(last_tree)
+
+
+if __name__ == "__main__":
+    main()
 
 
