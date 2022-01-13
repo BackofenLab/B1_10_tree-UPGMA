@@ -163,8 +163,7 @@ class Tree:
     def __eq__(self, other):
         if not isinstance(other, Tree):
             return False
-        return all([self.left_branch == other.left_branch,
-                    self.right_branch == other.right_branch,
+        return all([(self.left_branch == other.left_branch and self.right_branch == other.right_branch) or (self.left_branch == other.right_branch and self.right_branch == other.left_branch),
                     self.left_branch_distance == other.left_branch_distance,
                     self.right_branch_distance == other.right_branch_distance])
 
