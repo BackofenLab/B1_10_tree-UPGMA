@@ -165,7 +165,7 @@ You are provided with one helper function and two helper classes to perform the 
 compute_distance - computes the distance between two objects, it works for both Nodes and Trees for both wpgma and upgma
 modes.
 Node - a helper class to convert initial data into a node
-Tree - a tree representation class wich can be printed with Newick's representation
+Tree - a tree representation class which can be printed with Newick's representation
 
 Lets start creating nodes and trees
 """
@@ -190,10 +190,11 @@ print("Distance between trees  (a,b) and (c,d) is", compute_distance(first_tree,
 print("Result of merging together two trees", merged_trees)
 
 
-def convert_to_nodes(list_names, distance_info):
+def convert_to_nodes(distance_info):
     """ Exercise 4 a
-    implement the funcion 'convert_to_nodes' which takes a list of node names
-    and converts it to list of nodes using the provided distance info
+    implement the function 'convert_to_nodes' which takes the distance info
+    and converts it to list of nodes. Keep in mind that the node names are in
+    distance_info[1]
     """
     list_nodes = []
     return list_nodes
@@ -202,19 +203,19 @@ def convert_to_nodes(list_names, distance_info):
 def merge_best_pair(list_elements):
     """ Exercise 4 b
     Implement the function 'merge_best_pair' which takes a list of elements
-    which can be both nodes and trees, findes the best pair to merge based on
-    the distance, merges two closest objects and returns a list with the mered
+    which can be both nodes and trees, finds the best pair to merge based on
+    the distance, merges two closest objects and returns a list with the merged
     object as well as the remaining ones use compute_distance for that purpose
     """
     list_after_merge = []
     return list_after_merge
 
 
-def build_the_tree(list_names, distance_info):
+def build_the_tree(distance_info):
     """ Exercise 4 c
-    Implement the function 'build_the_tree' which takes the list of nodes names
-    as well as the distance_info and outputs the final tree use your
-    implementations of convert_to_nodes and merge_best_pair
+    Implement the function 'build_the_tree' which takes the distance_info and
+    outputs the final tree use your implementations of convert_to_nodes and
+    merge_best_pair
     """
     tree = None
     return tree
