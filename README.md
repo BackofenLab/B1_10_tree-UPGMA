@@ -39,7 +39,7 @@ Distances for a merged cluster e, where e = c ∪ d:
 Calculate the according evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.
 
 <p align="center">
-<img src="./figures/maxrix_exercise_1.png" alt="Matrix exercise a" width="90%"/>
+<img src="./figures/matrix_exercise_1.png" alt="Matrix exercise 1" width="90%"/>
 </p>
 
         
@@ -56,7 +56,7 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
 
 
 <p align="center">
-<img src="./figures/maxrix_exercise_1_c.png" alt="Matrix exercise a" width="90%"/>
+<img src="./figures/matrix_exercise_1_c.png" alt="Matrix exercise 1c" width="100%"/>
 </p>
     
 **1.**
