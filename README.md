@@ -137,7 +137,7 @@ statements is True?
 Which of the following distance matrices are ultrametric?
 
 <p align="center">
-<img src="./figures/matrices.png" alt="Ultrametric matrices" width="70%"/>
+<img src="./figures/matrices.png" alt="Ultrametric matrices" width="90%"/>
 </p>
 
 
