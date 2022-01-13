@@ -59,32 +59,6 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
 <img src="./figures/matrix_exercise_1_c.png" alt="Matrix exercise 1c" width="100%"/>
 </p>
     
-**1.**
-
-| D<sub>ij</sub>| {a,b}  | c    | d    | e   |
-|---------------|--------|------|------|-----|
-| **{a,b}**     |  0     | 12.5 | 12.5 | 9.5 |
-| **c**         |        |  0   | 13   | 7   |
-| **d**         |        |      |  0   |  7  |
-| **e**         |        |      |      |  0  |
-
-**2.**
-
-| D<sub>ij</sub>| {a,b}  | c    | d    | e   |
-|---------------|--------|------|------|-----|
-| **{a,b}**     |  0     | 10.5 | 10.5 | 9.5 |
-| **c**         |        |  0   | 13   | 7   |
-| **d**         |        |      |  0   |  7  |
-| **e**         |        |      |      |  0  |
-
-**3.**
-
-| D<sub>ij</sub>| {c,d}  | a    | b    | e   |
-|---------------|--------|------|------|-----|
-| **{c,d}**     |  0     |  12  | 13   |  7  |
-| **a**         |        |  0   | 13   |  7  |
-| **b**         |        |      |  0   |  7  |
-| **e**         |        |      |      |  0  |
 
 **d)** Which nodes are joined next given the correct distance matrix from **c**?
 
