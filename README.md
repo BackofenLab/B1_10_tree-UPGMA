@@ -134,43 +134,12 @@ statements is True?
 
 ### _Exercise 3 - Ultrametric_
 
-Which of the following distance matrices are ultrametric ?
+Which of the following distance matrices are ultrametric?
 
-**a)**
-| D<sub>ij</sub>| a  | b  | c  | d  | e  |
-|---------------|----|----|----|----|----|
-| **a**         |  0 |  3 | 12 | 12 |  9 |
-| **b**         |    |  0 | 13 | 13 | 10 |
-| **c**         |    |    |  0 |  6 |  7 |
-| **d**         |    |    |    |  0 |  7 |
-| **e**         |    |    |    |    |  0 |
+<p align="center">
+<img src="./figures/matrices.png" alt="Ultrametric matrices" width="70%"/>
+</p>
 
-**b)**
-| D<sub>ij</sub>| a  | b  | c  | d  | e  |
-|---------------|----|----|----|----|----|
-| **a**         |  0 |  2 |  4 |  6 |  8 |
-| **b**         |    |  0 |  4 |  6 |  8 |
-| **c**         |    |    |  0 |  6 |  8 |
-| **d**         |    |    |    |  0 |  8 |
-| **e**         |    |    |    |    |  0 |
-
-**c)**
-| D<sub>ij</sub>| a  | b  | c  | d  | e  |
-|---------------|----|----|----|----|----|
-| **a**         |  0 | 10 | 17 | 16 | 16 |
-| **b**         |    |  0 | 15 | 14 | 14 |
-| **c**         |    |    |  0 |  9 | 15 |
-| **d**         |    |    |    |  0 | 14 |
-| **e**         |    |    |    |    |  0 |
-
-**d)**
-| D<sub>ij</sub>| a  | b  | c  | d  | e  |
-|---------------|----|----|----|----|----|
-| **a**         |  0 |  2 |  2 |  2 |  2 |
-| **b**         |    |  0 |  4 |  4 |  4 |
-| **c**         |    |    |  0 |  6 |  6 |
-| **d**         |    |    |    |  0 |  8 |
-| **e**         |    |    |    |    |  0 |
 
 ### _Exercise 4 - Programming assignment_
 
