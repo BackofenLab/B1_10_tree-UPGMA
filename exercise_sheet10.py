@@ -155,9 +155,9 @@ In all of the tasks we will use the same structure of the given data which can b
 These three components are merged into a "distance info" tuple for our convenience
 """
 matrix_dist_1 = [[0, 3, 12, 12, 9], [3, 0, 13, 13, 10], [12, 13, 0, 6, 7], [12, 13, 6, 0, 7], [9, 10, 7, 7, 0]]
-nodes_ = ["a", "b", "c", "d", "e"]
+nodes_1 = ["a", "b", "c", "d", "e"]
 weight_1 = "wpgma"
-distance_info1 = matrix_dist_1, nodes_, weight_1
+distance_info1 = matrix_dist_1, nodes_1, weight_1
 
 
 """
