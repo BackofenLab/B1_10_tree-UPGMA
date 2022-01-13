@@ -7,15 +7,27 @@ def compute_distance(obj1, obj2):
     if isinstance(obj1, Node) and isinstance(obj2, Node):
         return obj1.distances[obj1.index][obj2.index]
     elif isinstance(obj1, Tree) and isinstance(obj2, Node):
-        left_distance = obj1.left_branch.compute_distance(obj2)
-        right_distance = obj1.right_branch.compute_distance(obj2)
-        total_distance = (left_distance + right_distance) / 2
-        return total_distance
+        if obj1.weight_type == "wpgma":
+            left_distance = obj1.left_branch.compute_distance(obj2)
+            right_distance = obj1.right_branch.compute_distance(obj2)
+            total_distance = (left_distance + right_distance) / 2
+            return total_distance
+        else:
+            left_distance = obj1.left_branch.compute_distance(obj2) * obj1.left_branch.size
+            right_distance = obj1.right_branch.compute_distance(obj2) * obj1.right_branch.size
+            total_distance = (left_distance + right_distance) / (obj1.left_branch.size + obj1.right_branch.size)
+            return total_distance
     elif isinstance(obj1, Node) and isinstance(obj2, Tree):
-        left_distance = obj2.left_branch.compute_distance(obj1)
-        right_distance = obj2.right_branch.compute_distance(obj1)
-        total_distance = (left_distance + right_distance) / 2
-        return total_distance
+        if obj1.weight_type == "wpgma":
+            left_distance = obj2.left_branch.compute_distance(obj1)
+            right_distance = obj2.right_branch.compute_distance(obj1)
+            total_distance = (left_distance + right_distance) / 2
+            return total_distance
+        else:
+            left_distance = obj2.left_branch.compute_distance(obj1) * obj2.left_branch.size
+            right_distance = obj2.right_branch.compute_distance(obj1) * obj2.right_branch.size
+            total_distance = (left_distance + right_distance) / (obj2.left_branch.size + obj2.right_branch.size)
+            return total_distance
     elif isinstance(obj1, Tree) and isinstance(obj2, Tree):
         if obj1.weight_type == "wpgma":
             left_distance = obj1.compute_distance(obj2.left_branch)
@@ -118,10 +130,18 @@ class Tree:
                 raise TypeError("Only supported between trees and nodes")
 
         if isinstance(other, Node):
-            distance = self.compute_distance(other)
-            half_distance = distance/2
-            self_distance = half_distance - self.depth
-            return Tree(self, self_distance, other, half_distance, self.distance_info)
+            if self.weight_type == "wpgma":
+                distance = self.compute_distance(other)
+                half_distance = distance/2
+                self_distance = half_distance - self.depth
+                return Tree(self, self_distance, other, half_distance, self.distance_info)
+            else:
+                left_distance = self.left_branch.compute_distance(other) * self.left_branch.size
+                right_distance = self.right_branch.compute_distance(other) * self.right_branch.size
+                total_distance = (left_distance + right_distance) / (self.left_branch.size + self.right_branch.size)
+                half_distance = total_distance/2
+                self_distance = half_distance - self.depth
+                return Tree(self, self_distance, other, half_distance, self.distance_info)
 
         if isinstance(other, Tree):
             if self.weight_type == "wpgma":
@@ -161,10 +181,16 @@ class Tree:
                 raise TypeError("Only supported between trees and nodes")
 
         if isinstance(other, Node):
-            left_distance = self.left_branch.compute_distance(other)
-            right_distance = self.right_branch.compute_distance(other)
-            total_distance = (left_distance + right_distance) / 2
-            return total_distance
+            if self.weight_type == "wpgma":
+                left_distance = self.left_branch.compute_distance(other)
+                right_distance = self.right_branch.compute_distance(other)
+                total_distance = (left_distance + right_distance) / 2
+                return total_distance
+            else:
+                left_distance = self.left_branch.compute_distance(other) * self.left_branch.size
+                right_distance = self.right_branch.compute_distance(other) * self.right_branch.size
+                total_distance = (left_distance + right_distance) / (self.left_branch.size + self.right_branch.size)
+                return total_distance
 
         if isinstance(other, Tree):
             if self.weight_type == "wpgma":
@@ -198,37 +224,50 @@ def merge_best_pair_correct(list_elements):
 def build_the_tree_correct(distance_info):
     list_elements = convert_to_nodes_correct(distance_info)
     while len(list_elements) > 1:
+        print(list_elements)
         list_elements = merge_best_pair_correct(list_elements)
     return list_elements[0]
 
 
 def main():
-    matrix_dist = [[0, 3, 12, 12, 9], [3, 0, 13, 13, 10], [12, 13, 0, 6, 7], [12, 13, 6, 0, 7], [9, 10, 7, 7, 0]]
-    nodes = ["a", "b", "c", "d", "e"]
-    weight = "upgma"
-    distance_info = matrix_dist, nodes, weight
 
-    a_node = Node("a", distance_info)
-    b_node = Node("b", distance_info)
+    matrix_dist_2 = [
+            [0, 17, 21, 31, 23],
+            [17, 0, 30, 34, 21],
+            [21, 30, 0, 28, 39],
+            [31, 34, 28, 0, 43],
+            [23, 21, 39, 43, 0]
+        ]
 
-    c_node = Node("c", distance_info)
-    d_node = Node("d", distance_info)
-    e_node = Node("e", distance_info)
+    nodes_ = ["a", "b", "c", "d", "e"]
+    weight_1 = "upgma"
+
+    distance_info4 = matrix_dist_2, nodes_, weight_1
+
+    a_node = Node("a", distance_info4)
+    b_node = Node("b", distance_info4)
+
+    c_node = Node("c", distance_info4)
+    d_node = Node("d", distance_info4)
+    e_node = Node("e", distance_info4)
 
     first_tree = a_node + b_node
     second_tree = c_node + d_node
     third_tree = second_tree + e_node
     third_tree_alternative = e_node + second_tree
     last_tree = first_tree + third_tree
-    print(first_tree)
-    print(second_tree)
-    print(third_tree)
-    print(third_tree_alternative)
-    print(last_tree)
+    #print(first_tree)
+    #print(second_tree)
+    #print(third_tree)
+    #print(third_tree_alternative)
+    #print(last_tree)
 
-    print(convert_to_nodes_correct(distance_info))
-    print(merge_best_pair_correct(convert_to_nodes_correct(distance_info)))
-    print(build_the_tree_correct(distance_info))
+    print(convert_to_nodes_correct(distance_info4))
+    print(merge_best_pair_correct(convert_to_nodes_correct(distance_info4)))
+    print(build_the_tree_correct(distance_info4))
+    tree_one = a_node + b_node + e_node
+    #print(tree_one)
+    #print(compute_distance(tree_one, d_node))
 
 
 if __name__ == "__main__":
