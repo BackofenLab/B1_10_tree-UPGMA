@@ -48,6 +48,8 @@ class Node:
     def __eq__(self, other):
         if not isinstance(other, Node):
             return False
+        assert self.distance_info == other.distance_info, \
+            "Can only compare Nodes from the same distance info"
         return self.node_name == other.node_name
 
     def compute_distance(self, other):
