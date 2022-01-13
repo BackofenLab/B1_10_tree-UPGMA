@@ -139,7 +139,7 @@ statements is True?
 Which of the following distance matrices are ultrametric?
 
 <p align="center">
-<img src="./figures/matrix_exercise_c.png" alt="Ultrametric matrices" width="90%"/>
+<img src="./figures/matrix_exercise_3.png" alt="Ultrametric matrices" width="90%"/>
 </p>
 
 
