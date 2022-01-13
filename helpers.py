@@ -175,8 +175,8 @@ class Tree:
                 return total_distance
 
 
-def convert_to_nodes_correct(list_names, distance_info):
-    return [Node(x, distance_info) for x in list_names]
+def convert_to_nodes_correct(distance_info):
+    return [Node(x, distance_info) for x in distance_info[1]]
 
 
 def merge_best_pair_correct(list_elements):
@@ -189,8 +189,8 @@ def merge_best_pair_correct(list_elements):
     return [merged] + [elem for index, elem in enumerate(list_elements) if index not in [row, column]]
 
 
-def build_the_tree_correct(list_names, distance_info):
-    list_elements = convert_to_nodes_correct(list_names, distance_info)
+def build_the_tree_correct(distance_info):
+    list_elements = convert_to_nodes_correct(distance_info)
     while len(list_elements) > 1:
         list_elements = merge_best_pair_correct(list_elements)
     return list_elements[0]

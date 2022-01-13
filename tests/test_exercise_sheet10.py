@@ -1,5 +1,6 @@
 import pytest
 
+import copy
 from exercise_sheet10 import *
 from helpers import *
 
@@ -116,7 +117,7 @@ def distance_info4(distance_info2):
 )
 def test_exercise_4a(distance_info, request):
     distance_info = request.getfixturevalue(distance_info)
-    expected = convert_to_nodes_correct(distance_info[1], distance_info)
+    expected = convert_to_nodes_correct(distance_info)
     actual = convert_to_nodes(distance_info)
     for node in expected:
         assert node in actual
@@ -133,24 +134,28 @@ def test_exercise_4a(distance_info, request):
 )
 def test_exercise_4b(distance_info, request):
     distance_info = request.getfixturevalue(distance_info)
-    liste = convert_to_nodes_correct(distance_info[1], distance_info)
-    expected = merge_best_pair_correct(liste)
-    actual = merge_best_pair(liste)
-    for node in expected:
+    nodes_list = convert_to_nodes_correct(distance_info)
+    actual = []
+    while len(nodes_list) > 1:
+        actual = merge_best_pair(copy.deepcopy(nodes_list))
+        nodes_list = merge_best_pair_correct(nodes_list)
+        for node in nodes_list:
+            assert node in actual
+    for node in nodes_list:
         assert node in actual
 
 
 @pytest.mark.parametrize(
     "distance_info",
     [
-        # "distance_info1",
-        # "distance_info2",
+        "distance_info1",
+        "distance_info2",
         "distance_info3",
         "distance_info4",
     ]
 )
 def test_exercise_4c(distance_info, request):
     distance_info = request.getfixturevalue(distance_info)
-    expected = build_the_tree_correct(distance_info[1], distance_info)
+    expected = build_the_tree_correct(distance_info)
     actual = build_the_tree(distance_info)
     assert actual == expected
