@@ -173,3 +173,9 @@ Which of the following distance matrices are ultrametric ?
 | **e**         |    |    |    |    |  0 |
 
 ### _Exercise 4 - Programming assignment_
+
+a) Implement the function 'convert_to_nodes' which takes the distance info and converts it to list of nodes.
+
+b) Implement the function 'merge_best_pair' which takes a list of elements which can be both nodes and trees, finds the best pair to merge based on the distance, merges two closest objects and returns a list with the merged object as well as the remaining ones use compute_distance for that purpose.
+
+c) Implement the function 'build_the_tree' which takes the distance_info and outputs the final tree use your implementations of convert_to_nodes and merge_best_pair.
