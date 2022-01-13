@@ -190,26 +190,31 @@ print("Distance between trees  (a,b) and (c,d) is", compute_distance(first_tree,
 print("Result of merging together two trees", merged_trees)
 
 
-# Task1 implement the funcion 'convert_to_nodes' which takes a list of node names and converts it to list of nodes using the provided distance info
 def convert_to_nodes(list_names, distance_info):
+    """ Exercise 4 a
+    implement the funcion 'convert_to_nodes' which takes a list of node names
+    and converts it to list of nodes using the provided distance info
+    """
     list_nodes = []
     return list_nodes
 
-# Task two:
-# Implement the function 'merge_best_pair' which takes a list of elements which can be both nodes and trees, findes the best pair to merge based on the distance, merges two closest objects and returns a list with the
-# mered object as well as the remaining ones
-# use compute_distance for that purpose
+
 def merge_best_pair(list_elements):
-    list_after_merge =[]
+    """ Exercise 4 b
+    Implement the function 'merge_best_pair' which takes a list of elements
+    which can be both nodes and trees, findes the best pair to merge based on
+    the distance, merges two closest objects and returns a list with the mered
+    object as well as the remaining ones use compute_distance for that purpose
+    """
+    list_after_merge = []
     return list_after_merge
 
-# Task three:
-# Implement the function 'build_the_tree' which takes the list of nodes names as well as the distance_info and outputs the final tree
-# use your implementations of convert_to_nodes and merge_best_pair
+
 def build_the_tree(list_names, distance_info):
+    """ Exercise 4 c
+    Implement the function 'build_the_tree' which takes the list of nodes names
+    as well as the distance_info and outputs the final tree use your
+    implementations of convert_to_nodes and merge_best_pair
+    """
     tree = None
     return tree
-
-
-# Task four (optional)
-#Implement your own Node and Tree classes, make sure that the Tree class can be printed in the Newick's representation
