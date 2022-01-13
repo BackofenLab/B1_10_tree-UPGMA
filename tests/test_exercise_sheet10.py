@@ -106,6 +106,22 @@ def distance_info4(distance_info2):
     return distance_info2[0], distance_info2[1], "upgma"
 
 
+@pytest.fixture
+def distance_info5():
+    matrix_dist_2 = [
+        [0, 2, 4, 6, 6, 8],
+        [2, 0, 4, 6, 6, 8],
+        [4, 4, 0, 6, 6, 8],
+        [6, 6, 6, 0, 4, 8],
+        [6, 6, 6, 4, 0, 8],
+        [8, 8, 8, 8, 8, 0],
+
+    ]
+    nodes_ = ["a", "b", "c", "d", "e", "f"]
+    weight_1 = "upgma"
+    return matrix_dist_2, nodes_, weight_1
+
+
 @pytest.mark.parametrize(
     "distance_info",
     [
@@ -152,6 +168,7 @@ def test_exercise_4b(distance_info, request):
         "distance_info2",
         "distance_info3",
         "distance_info4",
+        "distance_info5"
     ]
 )
 def test_exercise_4c(distance_info, request):
