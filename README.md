@@ -38,14 +38,11 @@ Distances for a merged cluster e, where e = c ∪ d:
 
 Calculate the according evolutionary tree using WPGMA and the pairwise distances in the following distance matrix.
 
-| D<sub>ij</sub>| a  | b  | c  | d  | e  |
-|---------------|----|----|----|----|----|
-| **a**         |  0 |  3 | 12 | 12 |  9 |
-| **b**         |    |  0 | 13 | 13 | 10 |
-| **c**         |    |    |  0 |  6 |  7 |
-| **d**         |    |    |    |  0 |  7 |
-| **e**         |    |    |    |    |  0 |
+<p align="center">
+<img src="./figures/maxrix_exercise_a.png" alt="Matrix exercise a" width="90%"/>
+</p>
 
+        
 **a)** Which leaves should be selected first?
 
 - [ ] c and d
@@ -137,7 +134,7 @@ statements is True?
 Which of the following distance matrices are ultrametric?
 
 <p align="center">
-<img src="./figures/matrices.png" alt="Ultrametric matrices" width="90%"/>
+<img src="./figures/matrix_exercise_c.png" alt="Ultrametric matrices" width="90%"/>
 </p>
 
 
