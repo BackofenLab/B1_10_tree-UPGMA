@@ -46,7 +46,7 @@ def test_exercise_1f():
 
 
 def test_exercise_1g():
-    answer = exercise_1e()
+    answer = exercise_1g()
     expected = "((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);"
     assert answer == expected
 
