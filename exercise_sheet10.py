@@ -1,4 +1,4 @@
-
+from math import inf
 
 
 def exercise_1a():
