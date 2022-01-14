@@ -76,7 +76,7 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
 
 
 <p align="center">
-<img src="./figures/exercise_1_3.png" alt="Exercise 1e" width="90%"/>
+<img src="./figures/matrix_exercise_1_e.png" alt="Exercise 1e" width="90%"/>
 </p>
 
     
