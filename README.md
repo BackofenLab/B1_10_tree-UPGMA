@@ -71,15 +71,15 @@ to the correct distances from the set of leaves (or internal node) in **a** to a
 
 <details>
   <summary>Hint: (Click to open)</summary>
-  If you did not end up with  these clusters after a-d, your current solution is wrong
+  If you did not end up with  these clusters after a-d, your current solution is wrong.
 </details>
 
-| D<sub>ij</sub>| {a,b}  | {c,d}| e    |
-|---------------|--------|------|------|
-| **{a,b}**     |  0     |      |      |
-| **{c,d}**     |        |  0   |      |
-| **e**         |        |      |  0   |
 
+<p align="center">
+<img src="./figures/exercise_1_3.png" alt="Exercise 1e" width="90%"/>
+</p>
+
+    
 **f)** What does the part of the tree look like in newick format after selecting and joining
 your answer from **e)**
 
@@ -91,7 +91,7 @@ your answer from **e)**
 
 **g)** Following the approach from the previous exercises, which of the following
 representations of the tree is correct? (Trees are given in [Newick format](https://en.wikipedia.org/wiki/Newick_format))
-Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.php?action=newick&project=trex)
+Feel free to inspect them using an [online tool](http://www.trex.uqam.ca/index.php?action=newick&project=trex).
 
 - [ ] ((a : 1.5, b : 1.5) : 4, ((c : 3, d : 3) : 0.5, e : 3.5) : 2);
 - [ ] ((a : 1.5, b : 1.5) : 4.25, ((c : 3, d : 3) : 0.5, e : 3.5) : 2.25);
