@@ -147,12 +147,12 @@ from helpers import Tree
 
 
 """
-In all of the tasks we will use the same structure of the given data which can be seen as three parts
+In all of the tasks we will use the same structure of the given data which can be seen as three parts:
 1. matrix of distances between nodes
 2. names of the nodes
 3. wpgma/upgma mode
 
-These three components are merged into a "distance info" tuple for our convenience
+These three components are merged into a "distance info" tuple for our convenience.
 """
 matrix_dist_1 = [[0, 3, 12, 12, 9], [3, 0, 13, 13, 10], [12, 13, 0, 6, 7], [12, 13, 6, 0, 7], [9, 10, 7, 7, 0]]
 nodes_1 = ["a", "b", "c", "d", "e"]
@@ -161,13 +161,13 @@ distance_info1 = matrix_dist_1, nodes_1, weight_1
 
 
 """
-You are provided with one helper function and two helper classes to perform the tree assembly
-compute_distance - computes the distance between two objects, it works for both Nodes and Trees for both wpgma and upgma
+You are provided with one helper function and two helper classes to perform the tree assembly:
+compute_distance - computes the distance between two objects, it works for both Nodes and Trees and for both wpgma and upgma
 modes.
 Node - a helper class to convert initial data into a node
-Tree - a tree representation class which can be printed with Newick's representation
+Tree - a tree representation class which can be printed in Newick's representation
 
-Lets start creating nodes and trees
+Lets start creating nodes and trees.
 """
 
 a = Node("a", distance_info1)
@@ -192,8 +192,8 @@ print("Result of merging together two trees", merged_trees)
 
 def convert_to_nodes(distance_info):
     """ Exercise 4 a
-    implement the function 'convert_to_nodes' which takes the distance info
-    and converts it to list of nodes. Keep in mind that the node names are in
+    Implement the function 'convert_to_nodes' which takes the distance information
+    and converts it to a list of nodes. Keep in mind that the node names are located in
     distance_info[1]
     """
     list_nodes = []
@@ -203,9 +203,10 @@ def convert_to_nodes(distance_info):
 def merge_best_pair(list_elements):
     """ Exercise 4 b
     Implement the function 'merge_best_pair' which takes a list of elements
-    which can be both nodes and trees, finds the best pair to merge based on
-    the distance, merges two closest objects and returns a list with the merged
-    object as well as the remaining ones use compute_distance for that purpose
+    that can be both nodes and trees. It finds the best pair to merge based on
+    the distance. Then it merges the two closest objects and returns a list with the merged
+    object as well as the remaining ones.
+    Use the 'compute_distance' function to determine the distance between two elements.
     """
     list_after_merge = []
     return list_after_merge
@@ -214,8 +215,8 @@ def merge_best_pair(list_elements):
 def build_the_tree(distance_info):
     """ Exercise 4 c
     Implement the function 'build_the_tree' which takes the distance_info and
-    outputs the final tree use your implementations of convert_to_nodes and
-    merge_best_pair
+    outputs the final tree. Use your implementations of 'convert_to_nodes' and
+    'merge_best_pair'
     """
     tree = None
     return tree
