@@ -32,9 +32,9 @@ def test_exercise_1d():
 def test_exercise_1e():
     answer = exercise_1e()
     matrix = [
-        [   0, 12.5, 9],  # {a,b}
+        [   0, 12.5, 9.5],  # {a,b}
         [12.5,    0, 7],  # {c,d}
-        [   9,    7, 0],  # e
+        [   9.5,    7, 0],  # e
     ]
     assert answer == matrix
 
