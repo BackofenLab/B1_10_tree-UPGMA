@@ -211,7 +211,6 @@ def convert_to_nodes_correct(distance_info):
 
 def merge_best_pair_correct(list_elements):
     list_distances = [compute_distance(x, y) if x != y else inf for x in list_elements for y in list_elements]
-    print(list_distances)
     min_nonzero = min(list_distances)
     index_min = list_distances.index(min_nonzero)
     row = index_min % len(list_elements)
@@ -223,7 +222,6 @@ def merge_best_pair_correct(list_elements):
 def build_the_tree_correct(distance_info):
     list_elements = convert_to_nodes_correct(distance_info)
     while len(list_elements) > 1:
-        print(list_elements)
         list_elements = merge_best_pair_correct(list_elements)
     return list_elements[0]
 
